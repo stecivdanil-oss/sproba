@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import Heder from './components/Heder.vue';
-import Card from './components/card.vue';
+
+import ItemCard from './components/ItemCard.vue';
 
 let info = 'mycompany'
 let clicks = ref(0)
@@ -20,7 +21,7 @@ let check = ref(true)
   <img src="./assets/vue.svg" alt="">
 </div>
 <input type="text" v-model="name">
-<Card/>
+ <ItemCard/>
 </template>
 
 <style scoped>
