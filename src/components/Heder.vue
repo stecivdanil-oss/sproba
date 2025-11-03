@@ -23,7 +23,7 @@ defineProps({
 
 <style scoped>
 header{
-    background-color: blueviolet;
+    background-color: var(--main-color);
 
 }
 .conteiner{

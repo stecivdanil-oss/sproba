@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "papaparse": "^5.5.3",
     "vue": "^3.5.22"
   },
   "devDependencies": {
