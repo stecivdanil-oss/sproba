@@ -27,11 +27,28 @@ Papa.parse(file,{
      <p v-if = "error" >error</p>
 </div>
 <table v-if = "data.length>0" border="1">
-    <thead>
+    <!-- <thead>
         <tr>
             <th v-for = '(key,val) in data[0]' style="width: 50px;">{{val }}</th>
         </tr>
     </thead>
+    <tbody>
+        <tr v-for="(row,idx) in data">
+         
+        </tr>
+    </tbody> -->
+    <thead>
+      <tr>
+         <th v-for = '(key,val) in data[0]' style="width: 50px;">{{val }}</th>
+        <!-- <th v-for="(value, key) in data[0]" :key="key">{{ key }}</th>   -->
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr v-for="(row, idx) in data" :key="idx">                      
+        <td v-for="(value, key) in row" :key="key">{{ value }}</td>   
+      </tr>
+    </tbody>
 </table>
 </template>
 <style scoped>
@@ -41,6 +58,7 @@ div{
     height: 70px;
     display: grid;
     place-items: center;
+    
 }
 
 

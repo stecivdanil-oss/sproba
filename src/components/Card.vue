@@ -1,4 +1,6 @@
 <script setup>
+import UiLike from './UiLike.vue';
+
 defineProps({
    item:Object
 
@@ -7,7 +9,12 @@ defineProps({
 
 <template>
 <div class="card">
-<img :src="item.image " alt="">
+    <div class="LoveItem">
+      <img :src="item.image " alt="">
+        <div class="ui">
+          <UiLike/>
+       </div>
+    </div>
 <h3>name:{{ item.name }}</h3>
 <p>price:{{ item.price }}</p>
 </div>
@@ -16,7 +23,7 @@ defineProps({
 <style scoped>
 .card{
     width: calc(670px / 3);
-    height: 330px;
+    /* height: 330px; */
     position: relative;
     background-color: var(--main-color);
     padding:10px 10px ;
@@ -37,5 +44,18 @@ img{
 }
 h3,p{
     text-align: center;
+}
+.LoveItem{
+    position: relative;
+    display: inline-block;
+}
+.LoveItem img{
+    display: block;
+
+}
+.LoveItem .ui{
+    position: absolute;
+    top: 10px;
+    right: 24px;
 }
 </style>

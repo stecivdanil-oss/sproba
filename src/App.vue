@@ -32,13 +32,17 @@ let data =products
 <button @click = " check = !check">change color</button>
 <div v-show = "check">
   <img src="./assets/vue.svg" alt="">
-</div>
+
 <input type="text" v-model="name">
  <ItemCard/>
- <div class="conteiner">
-  <Card v-for="el in data" :item =  "el" />
+     </div>
+       <div class="conteiner">
+        <Card v-for="el in data" :item =  "el" />
+       </div>
+     
+ <div class="parces">
+ <Parse />
  </div>
- <Parse/>
  <Futer/>
  </body>
 </template>
@@ -70,10 +74,14 @@ body{
     flex-wrap: wrap;
    
 }
+
 body{
   width: 100%;
   padding: 0;
   margin: 0;
    background-color: aliceblue;
+}
+.parces{
+  margin-top: 40px;
 }
 </style>

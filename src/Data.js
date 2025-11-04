@@ -38,5 +38,10 @@ image: "https://img.freepik.com/free-photo/landscape-nature-scene-tv-appliance-g
 name: "Фітнес-браслет Xiaomi Mi Band 7",
 price: 1800,
 image: "https://img.freepik.com/free-photo/futuristic-virtual-reality-headset-illuminates-dark-studio-shot-generated-by-ai_188544-13298.jpg"
+},
+{
+name: "Фітнес-браслет Xiaomi Mi Band 7",
+price: 1800,
+image: "https://img.freepik.com/free-photo/futuristic-virtual-reality-headset-illuminates-dark-studio-shot-generated-by-ai_188544-13298.jpg"
 }
 ]

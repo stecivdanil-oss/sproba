@@ -24,7 +24,7 @@ defineProps({
 <style scoped>
 header{
     background-color: var(--main-color);
-
+    padding: 20px;
 }
 .conteiner{
     max-width: 900px;
