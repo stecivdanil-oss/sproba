@@ -36,13 +36,14 @@ let data =products
 <input type="text" v-model="name">
  <ItemCard/>
      </div>
-       <div class="conteiner">
+       <div class="conteiner" style="margin-top:40px ;">
         <Card v-for="el in data" :item =  "el" />
        </div>
      
  <div class="parces">
  <Parse />
  </div>
+ <router-Link to=" /about">про нас </router-Link>
  <Futer/>
  </body>
 </template>

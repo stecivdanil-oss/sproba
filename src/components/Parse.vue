@@ -45,9 +45,12 @@ Papa.parse(file,{
     </thead>
     <tbody>
       
-      <tr v-for="(row, idx) in data" :key="idx">                      
-        <td v-for="(value, key) in row" :key="key">{{ value }}</td>   
-      </tr>
+      <!-- <tr v-for="(row, idx) in data" :key="idx">  -->
+        <tr v-for="(row, idx) in data">
+            <td v-for="(key,val) in row">{{ key}}</td>
+        </tr>                     
+        <!-- <td v-for="(value, key) in row" :key="key">{{ value }}</td>    -->
+      <!-- </tr> -->
     </tbody>
 </table>
 </template>
