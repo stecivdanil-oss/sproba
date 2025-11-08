@@ -44,6 +44,7 @@ let data =products
  <Parse />
  </div>
  <router-Link to=" /about">про нас </router-Link>
+  <router-view></router-view>
  <Futer/>
  </body>
 </template>
