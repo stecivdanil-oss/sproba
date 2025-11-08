@@ -22,10 +22,21 @@ let data =products
 </script>
 
 <template>
-<body>
-  
+  <body>
+     <Heder/>  
+      <router-view/>
+     <Futer/>
+  </body>
+   
 
-<Heder :name = "info" :count = "clicks" />
+
+
+
+
+
+
+
+  <!-- <Heder :name = "info" :count = "clicks" />
 
 <h1 :class="check?'h1':''">hello {{ name }}</h1>
 <button @click="clicks +=1" >aaa</button>
@@ -45,13 +56,20 @@ let data =products
  </div>
  <router-Link to=" /about">про нас </router-Link>
   <router-view></router-view>
- <Futer/>
- </body>
+ <Futer/> -->
+ 
 </template>
 
 <style scoped>
 
-body{
+
+
+
+
+
+
+
+/* body{
   width: 100%;
   padding: 0;
   margin: 0;
@@ -85,5 +103,5 @@ body{
 }
 .parces{
   margin-top: 40px;
-}
+} */
 </style>

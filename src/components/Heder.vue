@@ -11,7 +11,9 @@ defineProps({
         <div class="menu">
             <span>{{name}}</span>
             <nav>
-                <a href="">про нас</a>
+                <router-Link to="/">Home</router-Link>
+                <router-Link to="/about">About</router-Link>
+                <router-Link to="/attempt">Attempt</router-Link>
                 <a href="">товар</a>
                 <a href="">відгуки {{ count }}</a>
             </nav>
@@ -36,5 +38,9 @@ header{
     justify-content: space-between;
     align-items: center;
     
+}
+nav{
+    display: flex;
+    gap: 20px;
 }
 </style>
