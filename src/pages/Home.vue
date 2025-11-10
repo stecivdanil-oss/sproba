@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 // import Heder from './components/Heder.vue';
 
 import ItemCard from '../components/ItemCard.vue';
@@ -17,8 +17,10 @@ import { products } from '../Data';
 let data =products
 
 
-
-
+let search = ref('')
+let filtered_data = computed(()=>{
+  return products.filter(el=>el.name.toLowerCase().includes(search.value.toLowerCase()))
+})
 </script>
 
 <template>
@@ -26,10 +28,13 @@ let data =products
   
 
 <!-- <Heder :name = "info" :count = "clicks" /> -->
-
+   <div class="search">
+    <input type="text" v-model="search">
+    <img src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="">
+   </div>
 
        <div class="conteiner" style="margin-top:40px ;">
-        <Card v-for="el in data" :item =  "el" />
+        <Card v-for="el in filtered_data" :item =  "el" />
        </div>
      
  <div class="parces">
@@ -74,5 +79,30 @@ body{
 }
 .parces{
   margin-top: 40px;
+}
+.search{
+  
+  background-color: aquamarine;
+  height: 40px;
+  width: 300px;
+  position: relative;
+  margin: 40px auto 40px;
+  border-radius: 16px;
+}
+input{
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  text-align: center;
+  border: none;
+  outline: none;
+ box-shadow: 5px 5px 15px aquamarine;
+}
+img{
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 4%;
+  top: 25%;
 }
 </style>
