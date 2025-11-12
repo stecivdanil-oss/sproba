@@ -5,6 +5,10 @@ defineProps({
    item:Object
 
 })
+let emit = defineEmits(['addToBasket'])
+function add(prod){
+emit('addToBasket', prod)
+}
 </script>
 
 <template>
@@ -17,6 +21,7 @@ defineProps({
     </div>
 <h3>name:{{ item.name }}</h3>
 <p>price:{{ item.price }}</p>
+<button @click="add(item)">замовити</button>
 </div>
 </template>
 

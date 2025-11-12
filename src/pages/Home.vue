@@ -20,13 +20,31 @@ let data =products
 let search = ref('')
 let filtered_data = computed(()=>{
   return products.filter(el=>el.name.toLowerCase().includes(search.value.toLowerCase()))
-})
+});
+let zemov = ref([])
+let quantity = computed(()=>
+{return zemov.value.lenght})
+function addItems (item){
+  let itemExist = zemov.value.find(el=>el.name ==item.name)
+  if (itemExist){
+itemExist.quantity+=1
+  }
+  else{
+    
+    zemov.value.push({...item,quantity:1})
+  }
+  
+  
+  console.log(zemov)
+}
 </script>
 
 <template>
 <body>
   
-
+ <div style="margin-top: 20px">
+<router-Link to="/basket" >basket <span>{{ quantity }}</span></router-Link>
+ </div>
 <!-- <Heder :name = "info" :count = "clicks" /> -->
    <div class="search">
     <input type="text" v-model="search">
@@ -34,13 +52,13 @@ let filtered_data = computed(()=>{
    </div>
 
        <div class="conteiner" style="margin-top:40px ;">
-        <Card v-for="el in filtered_data" :item =  "el" />
+        <Card v-for="el in filtered_data" :item =  "el" @add-to-basket="addItems"/>
        </div>
      
  <div class="parces">
  <Parse />
  </div>
- 
+
  
  </body>
 </template>
@@ -104,5 +122,14 @@ img{
   position: absolute;
   right: 4%;
   top: 25%;
+}
+span{
+    padding: 8px 12px;
+    background-color: orange;
+    border-radius: 50%;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
 }
 </style>
