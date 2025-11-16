@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue';
 // import Heder from './components/Heder.vue';
 
-import ItemCard from '../components/ItemCard.vue';
+
 
 let info = 'mycompany'
 let clicks = ref(0)
@@ -23,7 +23,7 @@ let filtered_data = computed(()=>{
 });
 let zemov = ref([])
 let quantity = computed(()=>
-{return zemov.value.lenght})
+{return zemov.value.length})
 function addItems (item){
   let itemExist = zemov.value.find(el=>el.name ==item.name)
   if (itemExist){
@@ -35,8 +35,10 @@ itemExist.quantity+=1
   }
   
   
-  console.log(zemov)
+  // console.log(zemov.value)
+  console.log(zemov.value[0].price)
 }
+
 </script>
 
 <template>

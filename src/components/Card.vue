@@ -39,7 +39,8 @@ emit('addToBasket', prod)
     flex-direction: column;
 }
 .card:hover{
-    padding: 20px;
+    /* padding: 20px; */
+    transform: scale(1.05);
     transition: 0.2s;
 }
 img{
@@ -49,6 +50,7 @@ img{
 }
 h3,p{
     text-align: center;
+    margin-bottom: 0px;
 }
 .LoveItem{
     position: relative;
@@ -62,5 +64,18 @@ h3,p{
     position: absolute;
     top: 10px;
     right: 24px;
+}
+p{
+    margin-bottom: 10px;
+}
+button{
+    border-radius:12px ;
+    padding: 8px 16px;
+    border-style: none;
+}
+button:hover{
+    background-color: rgb(105, 110, 110);
+    color: aliceblue;
+    transition: 0.2s;
 }
 </style>
