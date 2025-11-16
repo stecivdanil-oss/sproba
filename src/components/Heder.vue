@@ -3,10 +3,10 @@ defineProps({
     name: String,    
     count: Number
 })
-import { computed, ref } from 'vue'
-let zemov = ref([100])
-let quantity = computed(()=>
-{return zemov.value.lenght})
+// import { computed, ref } from 'vue'
+// let zemov = ref([100])
+// let quantity = computed(()=>
+// {return zemov.value.lenght})
 </script>
 
 <template>
@@ -21,7 +21,7 @@ let quantity = computed(()=>
                 <a href="">товар</a>
                 <a href="">відгуки {{ count }}</a>
                  
-                 <router-Link to="/basket" >basket <span>{{ quantity }}</span></router-Link>
+                 <!-- <router-Link to="/basket" >basket <span>{{ quantity }}</span></router-Link> -->
             </nav>
 
         </div>
