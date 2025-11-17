@@ -15,7 +15,7 @@ import Card from '../components/Card.vue';
 import Parse from '../components/Parse.vue';
 import { products } from '../Data';
 let data =products
-
+let checkBasket = ref(false)
 
 let search = ref('')
 let filtered_data = computed(()=>{
@@ -28,10 +28,11 @@ function addItems (item){
   let itemExist = zemov.value.find(el=>el.name ==item.name)
   if (itemExist){
 itemExist.quantity+=1
+itemExist.suma = itemExist.quantity * itemExist.price
   }
   else{
     
-    zemov.value.push({...item,quantity:1})
+    zemov.value.push({...item,quantity:1, suma: 1 * item.price})
   }
   
   
@@ -45,9 +46,13 @@ itemExist.quantity+=1
 <body>
   
  <div style="margin-top: 20px">
-<router-Link to="/basket" >basket <span>{{ quantity }}</span></router-Link>
+  <div class="bassket" @click="checkBasket = !checkBasket">
+    basket <span>{{ quantity }}</span>
+  </div>
  </div>
-<!-- <Heder :name = "info" :count = "clicks" /> -->
+
+<div v-if = "!checkBasket">
+  <!-- <Heder :name = "info" :count = "clicks" /> -->
    <div class="search">
     <input type="text" v-model="search">
     <img src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="">
@@ -59,7 +64,36 @@ itemExist.quantity+=1
      
  <div class="parces">
  <Parse />
- </div>
+</div>
+ </div>  
+<div  class="zamov" v-else >
+  <h1>Ваші замовлення:</h1>
+  <table border = 1>
+    <thead>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Quantity</th>
+      <th>quantity price</th>
+    </thead>
+    <tbody>
+      <tr v-for = "el in zemov">
+        <td v-for="(key,val) in el" >
+          <template v-if="val === 'image'">
+        <img :src="key" alt="" style = 'width: 50px;height: 50px; ' />
+      </template>
+
+      <template v-else>
+        {{ key}}
+      </template> 
+
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
  
  </body>
