@@ -55,7 +55,7 @@ itemExist.suma = itemExist.quantity * itemExist.price
   <!-- <Heder :name = "info" :count = "clicks" /> -->
    <div class="search">
     <input type="text" v-model="search">
-    <img src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="">
+    <img class="searchImg" src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="">
    </div>
 
        <div class="conteiner" style="margin-top:40px ;">
@@ -90,10 +90,10 @@ itemExist.suma = itemExist.quantity * itemExist.price
         </td>
        
       </tr>
+     
     </tbody>
   </table>
 </div>
-
 
  
  </body>
@@ -152,7 +152,7 @@ input{
   outline: none;
  box-shadow: 5px 5px 15px aquamarine;
 }
-img{
+.searchImg{
   height: 24px;
   width: 24px;
   position: absolute;
