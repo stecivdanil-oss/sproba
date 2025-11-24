@@ -22,8 +22,9 @@ let filtered_data = computed(()=>{
   return products.filter(el=>el.name.toLowerCase().includes(search.value.toLowerCase()))
 });
 let zemov = ref([])
+let totalPrice = computed (()=>{return   zemov.value.reduce((total, el)=>total + el.suma, 0)})
 let quantity = computed(()=>
-{return zemov.value.length})
+{return zemov.value.length})  
 function addItems (item){
   let itemExist = zemov.value.find(el=>el.name ==item.name)
   if (itemExist){
@@ -93,6 +94,7 @@ itemExist.suma = itemExist.quantity * itemExist.price
      
     </tbody>
   </table>
+  <div>Всього: {{totalPrice}}</div>
 </div>
 
  
