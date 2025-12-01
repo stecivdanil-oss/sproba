@@ -1,4 +1,6 @@
 <script setup>
+import { useLoginStore } from '../login/loginStore';
+
 defineProps({
     name: String,    
     count: Number
@@ -7,20 +9,23 @@ defineProps({
 // let zemov = ref([100])
 // let quantity = computed(()=>
 // {return zemov.value.lenght})
+let auth = useLoginStore( )
 </script>
 
 <template>
 <header>
     <div class="conteiner">
         <div class="menu">
-            <span>{{name}}</span>
+            <img style="width: 52px;" src="../assets/images/Group1.svg" alt="">
             <nav>
                 <router-Link to="/">Home</router-Link>
                 <router-Link to="/about">About</router-Link>
                 <router-Link to="/attempt">Attempt</router-Link>
-                <a href="">товар</a>
-                <a href="">відгуки {{ count }}</a>
-                 
+                <router-Link to="/item">Item</router-Link>
+                
+                
+                <router-Link to="/login">вхід</router-Link>
+                 <button v-if="auth.user" @click="auth.logout">exit</button>
                  <!-- <router-Link to="/basket" >basket <span>{{ quantity }}</span></router-Link> -->
             </nav>
 
@@ -33,7 +38,7 @@ defineProps({
 <style scoped>
 header{
     background-color: var(--main-color);
-    padding: 20px;
+    padding: 8px 0;
 }
 .conteiner{
     max-width: 900px;

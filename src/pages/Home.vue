@@ -14,6 +14,9 @@ import Card from '../components/Card.vue';
 // import Futer from './components/Futer.vue';
 import Parse from '../components/Parse.vue';
 import { products } from '../Data';
+import { useLoginStore } from '../login/loginStore';
+import { useRouter } from 'vue-router';
+let push = useRouter()
 let data =products
 let checkBasket = ref(false)
 
@@ -40,10 +43,16 @@ itemExist.suma = itemExist.quantity * itemExist.price
   // console.log(zemov.value)
   console.log(zemov.value[0].price)
 }
+let auth = useLoginStore()
 
 </script>
 
 <template>
+  <div style="display:flex; justify-content:flex-start; align-items: center; " v-if=" (auth.user)">
+    <img @click="push.push('/Acount')" style="width: 24px; height: 24px;" src="https://cdn-icons-png.flaticon.com/128/456/456212.png" alt="">
+ <p>{{ auth.user.name }}</p>
+ 
+  </div>
 <body>
   
  <div style="margin-top: 20px">
